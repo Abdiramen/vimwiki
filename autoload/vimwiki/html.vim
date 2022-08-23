@@ -55,7 +55,7 @@ function! s:find_autoload_file(name) abort
   for path in split(&runtimepath, ',')
     let fname = path.'/autoload/vimwiki/'.a:name
     if glob(fname) !=? ''
-      return fname
+      return glob(fname)
     endif
   endfor
   return ''
